@@ -1,0 +1,15 @@
+quicksort(A, low, high)
+    if low < high
+        p = partition(A, low, high)
+        quicksort(A, low, p - 1)
+        quicksort(A, p + 1, high)
+
+partition(A, low, high)
+    pivot = A[high]
+    i = low - 1
+    for j = low to high - 1
+        if A[j] <= pivot
+            i = i + 1
+            swap A[i] with A[j]
+    swap A[i + 1] with A[high]
+    return i + 1
